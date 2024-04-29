@@ -1,46 +1,72 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from 'App';
 import React from 'react';
-import {Pressable, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {SignInSchema, signInSchema} from '@/schema/schma';
+import {useForm, Controller} from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
+import Input from '@/components/Input';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SignIn'>;
 export default function SignIn({navigation}: Props) {
+  const {control, handleSubmit} = useForm<SignInSchema>({
+    mode: 'onSubmit',
+    resolver: zodResolver(signInSchema),
+    delayError: 300,
+  });
   const onSignUp = () => {
     navigation.navigate('SignUp');
   };
-  const onSubmit = () => {};
+  const onSubmit = (data: SignInSchema) => {
+    console.log(data);
+  };
+
   return (
     <View style={styles.container}>
       <View>
-        <View style={styles.inputContainer}>
-          <Text style={styles.label}>이메일</Text>
-          <TextInput
-            placeholder="Email"
-            autoComplete="email"
-            importantForAutofill="yes"
-            inputMode="email"
-            textContentType="emailAddress"
-            keyboardType="email-address"
-            blurOnSubmit={false}
-            style={styles.input}
-          />
-        </View>
+        <Controller
+          control={control}
+          name="email"
+          render={({field: {onChange, onBlur, value}, fieldState: {error}}) => (
+            <Input
+              title="이메일"
+              placeholder="Email"
+              autoComplete="email"
+              importantForAutofill="yes"
+              inputMode="email"
+              textContentType="emailAddress"
+              keyboardType="email-address"
+              blurOnSubmit={false}
+              value={value}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              error={error}
+            />
+          )}
+        />
 
-        <View style={styles.inputContainer}>
-          <Text style={styles.label}>비밀번호</Text>
-          <TextInput
-            placeholder="Password"
-            importantForAutofill="yes"
-            autoComplete="password"
-            style={styles.input}
-            textContentType="password"
-            secureTextEntry={true}
-            onSubmitEditing={onSubmit}
-          />
-        </View>
+        <Controller
+          control={control}
+          name="password"
+          render={({field: {onChange, value, onBlur}, fieldState: {error}}) => (
+            <Input
+              title="비밀번호"
+              placeholder="Password"
+              importantForAutofill="yes"
+              autoComplete="password"
+              textContentType="password"
+              secureTextEntry={true}
+              onSubmitEditing={() => handleSubmit(onSubmit)}
+              value={value}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              error={error}
+            />
+          )}
+        />
       </View>
       <View>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={handleSubmit(onSubmit)}>
           <Text style={styles.buttonText}>로그인</Text>
         </Pressable>
         <Pressable style={styles.button} onPress={onSignUp}>
@@ -58,20 +84,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
   },
-  input: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBlockColor: 'black',
-    borderStyle: 'solid',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    marginTop: 4,
-    fontSize: 18,
-  },
-  inputContainer: {
-    marginBottom: 20,
-  },
   button: {
-    backgroundColor: 'black',
+    backgroundColor: 'rgb(117, 162, 235)',
     marginBottom: 20,
     paddingVertical: 10,
     borderRadius: 10,
@@ -80,13 +94,5 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     fontSize: 20,
-  },
-  buttonEnable: {
-    backgroundColor: 'rgb(117, 162, 235)',
-  },
-  label: {
-    fontWeight: 'bold',
-    fontSize: 16,
-    paddingHorizontal: 8,
   },
 });

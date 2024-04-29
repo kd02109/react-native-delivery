@@ -1713,6 +1713,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/resolvers@npm:^3.3.4":
+  version: 3.3.4
+  resolution: "@hookform/resolvers@npm:3.3.4"
+  peerDependencies:
+    react-hook-form: ^7.0.0
+  checksum: 7761e3340d23acd092dec4023344678e62b0c0ea0ed5aa3687cd315fc339b3b965e11124d643811292e6962683357423e6fe646fffabf9b96f8322f41903924d
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -3086,6 +3095,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
+    "@hookform/resolvers": ^3.3.4
     "@react-native/babel-preset": 0.74.81
     "@react-native/eslint-config": 0.74.81
     "@react-native/metro-config": 0.74.81
@@ -3101,11 +3111,13 @@ __metadata:
     jest: ^29.6.3
     prettier: 2.8.8
     react: 18.2.0
+    react-hook-form: ^7.51.3
     react-native: 0.74.0
     react-native-safe-area-context: ^4.10.1
     react-native-screens: ^3.31.1
     react-test-renderer: 18.2.0
     typescript: 5.0.4
+    zod: ^3.23.4
   languageName: unknown
   linkType: soft
 
@@ -8151,6 +8163,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.51.3":
+  version: 7.51.3
+  resolution: "react-hook-form@npm:7.51.3"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 4ac71033b66ae0b7b9d75a1bc2053a6747fb37f68c6895ee85a72cabb890168d82990c8ca7bddd271e80fdbf58f471d14d6a0e0714400d017590d4f56b3d241f
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0, react-is@npm:^18.0.0, react-is@npm:^18.2.0":
   version: 18.3.1
   resolution: "react-is@npm:18.3.1"
@@ -9954,5 +9975,12 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.23.4":
+  version: 3.23.4
+  resolution: "zod@npm:3.23.4"
+  checksum: 58f6e298c51d9ae01a1b1a1692ac7f00774b466d9a287a1ff8d61ff1fbe0ae9b0f050ae1cf1a8f71e4c6ccd0333a3cc340f339360fab5f5046cc954d10525a54
   languageName: node
   linkType: hard
