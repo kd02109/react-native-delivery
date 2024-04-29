@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "dev:debugger" : "react-native start --experimental-debugger",
+    "react-devtool" : "npx react-devtools",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
