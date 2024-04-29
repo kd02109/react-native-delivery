@@ -1,5 +1,5 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from 'App';
+import {RootStackParamList} from 'AppNavigator';
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {SignUpSchema, signUpSchema} from '@/schema/schma';
