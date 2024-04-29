@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-export default function Ing() {
+export default function Complete() {
   return (
     <View>
-      <Text>Ing</Text>
+      <Text>Complete</Text>
     </View>
   );
 }

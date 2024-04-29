@@ -1,10 +1,19 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Ing from '@page/Ing';
+import Complete from '@page/Complete';
+
+const Stack = createNativeStackNavigator();
 
 export default function Delivery() {
   return (
-    <View>
-      <Text>Delivery</Text>
-    </View>
+    <Stack.Navigator initialRouteName="Ing">
+      <Stack.Screen component={Ing} name="Ing" options={{headerShown: false}} />
+      <Stack.Screen
+        component={Complete}
+        name="Complete"
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
   );
 }
