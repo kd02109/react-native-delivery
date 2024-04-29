@@ -38,5 +38,7 @@ const styles = StyleSheet.create({
   errorText: {
     fontSize: 14,
     color: '#eb2f5e',
+    paddingHorizontal: 8,
+    marginTop: 2,
   },
 });

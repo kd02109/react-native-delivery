@@ -66,7 +66,10 @@ export default function SignIn({navigation}: Props) {
         />
       </View>
       <View>
-        <Pressable style={styles.button} onPress={handleSubmit(onSubmit)}>
+        <Pressable
+          style={styles.button}
+          onPress={handleSubmit(onSubmit)}
+          android_ripple={{color: '#2821de'}}>
           <Text style={styles.buttonText}>로그인</Text>
         </Pressable>
         <Pressable style={styles.button} onPress={onSignUp}>
