@@ -8,9 +8,9 @@ import React, {useEffect} from 'react';
 import SignIn from '@page/SignIn';
 import SignUp from '@page/SignUp';
 import {useAppDispatch, useAppSelector} from '@/store';
-import {getTokenAndRefresh} from '@/api';
+import {postWithToken} from '@/api';
 import {Alert} from 'react-native';
-import {userSlice} from '@/slice/user';
+import {UserState, userSlice} from '@/slice/user';
 import useSocket from '@/hook/useSocket';
 
 export type LoggedInParamList = {
@@ -34,7 +34,7 @@ export default function AppNavigator() {
 
   // 토큰 재발급
   useEffect(() => {
-    getTokenAndRefresh().then(data => {
+    postWithToken<UserState | string>('/refreshToken').then(data => {
       if (typeof data === 'string') {
         Alert.alert('알림', data);
       } else {

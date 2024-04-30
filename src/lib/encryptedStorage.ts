@@ -13,3 +13,7 @@ export const getStorage = async (name: string) => {
     return JSON.parse(value);
   }
 };
+
+export const deleteStorage = async (name: string) => {
+  EncryptedStorage.removeItem(name);
+};
