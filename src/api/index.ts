@@ -1,5 +1,6 @@
-import {SignUpSchema} from '@/schema/schma';
-import axios, {AxiosError} from 'axios';
+import {SignInSchema, SignUpSchema} from '@/schema/schma';
+import {UserState} from '@/slice/user';
+import axios, {AxiosError, AxiosResponse} from 'axios';
 import Config from 'react-native-config';
 
 // 에뮬레이터 내부 주소
@@ -12,12 +13,11 @@ export const instance = axios.create({
 export async function postSignup(data: SignUpSchema) {
   let message = '';
   try {
-    const res = await instance.post('/user', {
+    await instance.post('/user', {
       email: data.email,
       name: data.name,
       password: data.password,
     });
-    console.log('res :', res);
     message = 'sucess';
   } catch (err) {
     console.error(err);
@@ -32,6 +32,30 @@ export async function postSignup(data: SignUpSchema) {
     }
     return message;
   } finally {
+    return message;
+  }
+}
+
+export async function postSignIn(data: SignInSchema) {
+  try {
+    const response = await instance.post<
+      SignInSchema,
+      AxiosResponse<{data: UserState}>
+    >('/login', {
+      email: data.email,
+      password: data.password,
+    });
+
+    return response.data.data;
+  } catch (err) {
+    let message: string;
+    if (err instanceof AxiosError) {
+      message = err.response?.data.message
+        ? err.response?.data.message
+        : 'axios Error';
+    } else {
+      message = '로그인 실패';
+    }
     return message;
   }
 }

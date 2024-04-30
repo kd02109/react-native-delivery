@@ -1,14 +1,27 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from 'AppNavigator';
-import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {
+  ActivityIndicator,
+  Alert,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {SignInSchema, signInSchema} from '@/schema/schma';
 import {useForm, Controller} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import Input from '@/components/Input';
+import {postSignIn} from '@/api';
+import {useAppDispatch} from '@/store';
+import {userSlice} from '@/slice/user';
+import {setStorage} from '@/lib/encryptedStorage';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SignIn'>;
 export default function SignIn({navigation}: Props) {
+  const dispatch = useAppDispatch();
+  const [loading, setLoading] = useState(false);
   const {control, handleSubmit} = useForm<SignInSchema>({
     mode: 'onSubmit',
     resolver: zodResolver(signInSchema),
@@ -17,8 +30,24 @@ export default function SignIn({navigation}: Props) {
   const onSignUp = () => {
     navigation.navigate('SignUp');
   };
-  const onSubmit = (data: SignInSchema) => {
-    console.log(data);
+  const onSubmit = async (data: SignInSchema) => {
+    setLoading(prev => !prev);
+    const response = await postSignIn(data);
+    if (typeof response === 'string') {
+      Alert.alert('로그인에 실패했습니다.', response);
+    } else {
+      dispatch(
+        userSlice.actions.setUser({
+          ...response,
+          name: response.name,
+          email: response.email,
+          accessToken: response.accessToken,
+        }),
+      );
+      await setStorage('refreshToken', response.refreshToken); // 유효기간 1일 30일 accessToken 보다는 길다.
+      Alert.alert('로그인.');
+    }
+    setLoading(prev => !prev);
   };
 
   return (
@@ -70,7 +99,11 @@ export default function SignIn({navigation}: Props) {
           style={styles.button}
           onPress={handleSubmit(onSubmit)}
           android_ripple={{color: '#2821de'}}>
-          <Text style={styles.buttonText}>로그인</Text>
+          {loading ? (
+            <ActivityIndicator color={'white'} />
+          ) : (
+            <Text style={styles.buttonText}>로그인</Text>
+          )}
         </Pressable>
         <Pressable style={styles.button} onPress={onSignUp}>
           <Text style={styles.buttonText}>회원가입</Text>
