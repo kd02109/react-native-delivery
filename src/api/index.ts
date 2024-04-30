@@ -1,6 +1,9 @@
+import {REFRESH_TOKEN} from '@/lib/constant';
+import {getStorage} from '@/lib/encryptedStorage';
 import {SignInSchema, SignUpSchema} from '@/schema/schma';
 import {UserState} from '@/slice/user';
 import axios, {AxiosError, AxiosResponse} from 'axios';
+
 import Config from 'react-native-config';
 
 // 에뮬레이터 내부 주소
@@ -57,5 +60,24 @@ export async function postSignIn(data: SignInSchema) {
       message = '로그인 실패';
     }
     return message;
+  }
+}
+
+export async function getTokenAndRefresh() {
+  const refreshToken = await getStorage(REFRESH_TOKEN);
+  try {
+    if (!refreshToken) {
+      return '다시 로그인 해주세요';
+    }
+    const response = await instance.post<any, AxiosResponse<{data: UserState}>>(
+      '/refreshToken',
+      {},
+      {
+        headers: {authorization: `Bearer ${refreshToken}`},
+      },
+    );
+    return response.data.data;
+  } catch (err) {
+    return '다시 로그인 해주세요';
   }
 }

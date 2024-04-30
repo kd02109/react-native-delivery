@@ -17,6 +17,7 @@ import {postSignIn} from '@/api';
 import {useAppDispatch} from '@/store';
 import {userSlice} from '@/slice/user';
 import {setStorage} from '@/lib/encryptedStorage';
+import {REFRESH_TOKEN} from '@/lib/constant';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SignIn'>;
 export default function SignIn({navigation}: Props) {
@@ -44,7 +45,7 @@ export default function SignIn({navigation}: Props) {
           accessToken: response.accessToken,
         }),
       );
-      await setStorage('refreshToken', response.refreshToken); // 유효기간 1일 30일 accessToken 보다는 길다.
+      await setStorage(REFRESH_TOKEN, response.refreshToken); // 유효기간 1일 30일 accessToken 보다는 길다.
       Alert.alert('로그인.');
     }
     setLoading(prev => !prev);

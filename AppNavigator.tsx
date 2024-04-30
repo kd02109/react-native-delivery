@@ -4,10 +4,14 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Settings from '@page/Settings';
 import Orders from '@page/Orders';
 import Delivery from '@page/Delivery';
-import React from 'react';
+import React, {useEffect} from 'react';
 import SignIn from '@page/SignIn';
 import SignUp from '@page/SignUp';
-import {useAppSelector} from '@/store';
+import {useAppDispatch, useAppSelector} from '@/store';
+import {getTokenAndRefresh} from '@/api';
+import {Alert} from 'react-native';
+import {userSlice} from '@/slice/user';
+import useSocket from '@/hook/useSocket';
 
 export type LoggedInParamList = {
   Orders: undefined;
@@ -25,6 +29,43 @@ const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function AppNavigator() {
   const isLoggedIn = useAppSelector(state => !!state.user.email);
+  const dispatch = useAppDispatch();
+  const [socket, disconnect] = useSocket();
+
+  // 토큰 재발급
+  useEffect(() => {
+    getTokenAndRefresh().then(data => {
+      if (typeof data === 'string') {
+        Alert.alert('알림', data);
+      } else {
+        dispatch(userSlice.actions.setUser(data));
+      }
+    });
+  }, [dispatch]);
+
+  // socket 활용하기
+  useEffect(() => {
+    const callback = (data: any) => {
+      console.log(data);
+    };
+    if (socket && isLoggedIn) {
+      socket.emit('login', 'hello');
+      socket.on('hello', callback);
+    }
+
+    return () => {
+      if (socket) {
+        socket.off('hello', callback);
+      }
+    };
+  }, [socket, isLoggedIn]);
+
+  // disconnect
+  useEffect(() => {
+    if (!isLoggedIn) {
+      disconnect();
+    }
+  }, [isLoggedIn, disconnect]);
   return (
     <NavigationContainer>
       {isLoggedIn ? (
