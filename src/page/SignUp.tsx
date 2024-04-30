@@ -1,23 +1,40 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from 'AppNavigator';
-import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {
+  ActivityIndicator,
+  Alert,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {SignUpSchema, signUpSchema} from '@/schema/schma';
 import {useForm, Controller} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import Input from '@/components/Input';
 import DismissKeyboardView from '@/components/DismisKeyboardView';
+import {postSignup} from '@/api';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SignUp'>;
 export default function SignUp({navigation}: Props) {
+  const [loading, setLoading] = useState(false);
   const {control, handleSubmit} = useForm<SignUpSchema>({
     mode: 'onSubmit',
     resolver: zodResolver(signUpSchema),
     delayError: 300,
   });
 
-  const onSubmit = (data: SignUpSchema) => {
+  const onSubmit = async (data: SignUpSchema) => {
     console.log(data);
+    if (loading) {
+      return;
+    }
+
+    setLoading(prev => !prev);
+    const message = await postSignup(data);
+    setLoading(prev => !prev);
+    Alert.alert('Check', message);
   };
 
   return (
@@ -88,8 +105,13 @@ export default function SignUp({navigation}: Props) {
         <Pressable
           style={styles.button}
           onPress={handleSubmit(onSubmit)}
+          disabled={loading}
           android_ripple={{color: '#2821de'}}>
-          <Text style={styles.buttonText}>회원가입</Text>
+          {loading ? (
+            <ActivityIndicator color={'white'} />
+          ) : (
+            <Text style={styles.buttonText}>회원가입</Text>
+          )}
         </Pressable>
       </View>
     </DismissKeyboardView>
