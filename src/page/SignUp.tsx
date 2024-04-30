@@ -15,6 +15,7 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import Input from '@/components/Input';
 import DismissKeyboardView from '@/components/DismisKeyboardView';
 import {postSignup} from '@/api';
+import Config from 'react-native-config';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SignUp'>;
 export default function SignUp({navigation}: Props) {
@@ -26,7 +27,6 @@ export default function SignUp({navigation}: Props) {
   });
 
   const onSubmit = async (data: SignUpSchema) => {
-    console.log(data);
     if (loading) {
       return;
     }
