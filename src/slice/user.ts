@@ -5,6 +5,7 @@ export interface UserState {
   email: string;
   accessToken: string;
   refreshToken: string;
+  money: number;
 }
 
 const initialState: UserState = {
@@ -12,6 +13,7 @@ const initialState: UserState = {
   email: '',
   accessToken: '',
   refreshToken: '',
+  money: 0,
 };
 
 export const userSlice = createSlice({
@@ -23,6 +25,8 @@ export const userSlice = createSlice({
       state.email = action.payload.email;
       state.accessToken = action.payload.accessToken;
     },
+    setMoney(state, action: PayloadAction<number>) {
+      state.money = action.payload;
+    },
   },
-  extraReducers: builder => {},
 });

@@ -88,20 +88,37 @@ export async function postWithRefreshToken<T>(path: string) {
   }
 }
 
-export async function postWithAuthToken<T>(path: string, token: string) {
-  const refreshToken = await getStorage(REFRESH_TOKEN);
+export async function postWithAuthToken<T, Body>(
+  path: string,
+  token: string,
+  data?: Body,
+) {
   try {
-    if (!refreshToken) {
-      return '다시 로그인 해주세요';
-    }
     const response = await instance.post<any, AxiosResponse<{data: T}>>(
       path,
-      {},
+      data,
       {
         headers: {Authorization: token},
       },
     );
     return response.data.data;
+  } catch (err) {
+    if (err instanceof AxiosError) {
+      const message = err.response?.data.message
+        ? (err.response?.data.message as string)
+        : '다시 로그인 해주세요';
+      throw new Error(message);
+    }
+    throw new Error('다시 로그인 해주세요');
+  }
+}
+
+export async function getWithAuthToken<T>(path: string, token: string) {
+  try {
+    const response = await instance.get<any, AxiosResponse<{data: T}>>(path, {
+      headers: {Authorization: `Bearer ${token}`},
+    });
+    return response.data;
   } catch (err) {
     if (err instanceof AxiosError) {
       const message = err.response?.data.message
