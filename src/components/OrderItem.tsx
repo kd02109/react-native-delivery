@@ -1,6 +1,15 @@
+import {postWithAuthToken} from '@/api';
 import useHeightAnimation from '@/hook/useHeightAnimation';
+import {REFRESH_TOKEN} from '@/lib/constant';
+import {deleteStorage} from '@/lib/encryptedStorage';
 import getDistanceFromLatLonInKm from '@/lib/getDistanceFromLatLonInKm';
+import {orderSlice} from '@/slice/order';
+import {userSlice} from '@/slice/user';
+import {useAppDispatch, useAppSelector} from '@/store';
 import {Order} from '@/type';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+
+import {LoggedInParamList} from 'AppNavigator';
 import React, {useState} from 'react';
 
 import {
@@ -9,29 +18,59 @@ import {
   StyleSheet,
   Pressable,
   ListRenderItemInfo,
+  ActivityIndicator,
+  Alert,
 } from 'react-native';
 import Animated from 'react-native-reanimated';
 
 export default function OrderItem(props: ListRenderItemInfo<Order>) {
-  const start = props.item.start;
-  const end = props.item.end;
+  const {item} = props;
+  const start = item.start;
+  const end = item.end;
+  const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [height, animatedStyles] = useHeightAnimation(300);
+  const dispatch = useAppDispatch();
+  const accessToken = useAppSelector(state => state.user.accessToken);
+  const navigation = useNavigation<NavigationProp<LoggedInParamList>>();
 
   const onToggle = () => {
     setIsOpen(prev => !prev);
     height.value = isOpen ? 0 : 100;
   };
 
-  const onAccept = async () => {};
+  const onAccept = async () => {
+    setLoading(prev => !prev);
+    dispatch(orderSlice.actions.acceptOrder(item.orderId));
+    try {
+      await postWithAuthToken('/accept', accessToken, {
+        orderId: item.orderId,
+      });
+      setLoading(prev => !prev);
+      navigation.navigate('Delivery');
+    } catch (err) {
+      if (err instanceof Error) {
+        Alert.alert('Error', err.message);
+        // 리프레시 토큰이 만료되었을 경우
+        if (err.message === '로그인 기간이 만료되었습니다.') {
+          await deleteStorage(REFRESH_TOKEN);
+          dispatch(userSlice.actions.setReset());
+        }
+      }
+      dispatch(orderSlice.actions.rejectOrider(item.orderId));
+      setLoading(prev => !prev);
+    }
+  };
 
-  const onReject = async () => {};
+  const onReject = async () => {
+    dispatch(orderSlice.actions.rejectOrider(item.orderId));
+  };
   return (
     <View style={styles.orderContainer}>
       <Pressable onPress={onToggle}>
         <View style={styles.info}>
           <Text style={styles.eachInfo}>
-            {props.item.price.toLocaleString('en-US')}
+            {item.price.toLocaleString('en-US')}
           </Text>
           <Text style={styles.eachInfo}>
             {getDistanceFromLatLonInKm(
@@ -51,7 +90,11 @@ export default function OrderItem(props: ListRenderItemInfo<Order>) {
               </View>
               <View style={styles.buttonWrapper}>
                 <Pressable onPress={onAccept} style={styles.acceptButton}>
-                  <Text style={styles.buttonText}>수락</Text>
+                  {loading ? (
+                    <ActivityIndicator />
+                  ) : (
+                    <Text style={styles.buttonText}>수락</Text>
+                  )}
                 </Pressable>
                 <Pressable onPress={onReject} style={styles.rejectButton}>
                   <Text style={styles.buttonText}>거절</Text>

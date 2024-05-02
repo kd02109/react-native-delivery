@@ -2,6 +2,7 @@ import {REFRESH_TOKEN} from '@/lib/constant';
 import {getStorage} from '@/lib/encryptedStorage';
 import {SignInSchema, SignUpSchema} from '@/schema/schma';
 import {UserState} from '@/slice/user';
+
 import axios, {AxiosError, AxiosResponse} from 'axios';
 
 import Config from 'react-native-config';
@@ -13,6 +14,8 @@ export const instance = axios.create({
   baseURL: Config.API_URL,
 });
 
+instance.interceptors.request.use();
+
 export async function postSignup(data: SignUpSchema) {
   let message = '';
   try {
@@ -23,7 +26,6 @@ export async function postSignup(data: SignUpSchema) {
     });
     message = 'sucess';
   } catch (err) {
-    console.error(err);
     if (err instanceof AxiosError) {
       message = err.response?.data.message
         ? err.response?.data.message
@@ -65,9 +67,10 @@ export async function postSignIn(data: SignInSchema) {
 
 export async function postWithRefreshToken<T>(path: string) {
   const refreshToken = await getStorage(REFRESH_TOKEN);
+
   try {
     if (!refreshToken) {
-      return '다시 로그인 해주세요';
+      throw new Error('로그인 기간이 만료되었습니다.');
     }
     const response = await instance.post<any, AxiosResponse<{data: T}>>(
       path,
@@ -79,12 +82,10 @@ export async function postWithRefreshToken<T>(path: string) {
     return response.data.data;
   } catch (err) {
     if (err instanceof AxiosError) {
-      const message = err.response?.data.message
-        ? (err.response?.data.message as string)
-        : '다시 로그인 해주세요';
+      const message = err.response!.data.message;
       throw new Error(message);
     }
-    throw new Error('다시 로그인 해주세요');
+    throw new Error('로그인 기간이 만료되었습니다.');
   }
 }
 
@@ -104,12 +105,11 @@ export async function postWithAuthToken<T, Body>(
     return response.data.data;
   } catch (err) {
     if (err instanceof AxiosError) {
-      const message = err.response?.data.message
-        ? (err.response?.data.message as string)
-        : '다시 로그인 해주세요';
+      const message = err.response!.data.message;
+
       throw new Error(message);
     }
-    throw new Error('다시 로그인 해주세요');
+    throw new Error('로그인 기간이 만료되었습니다.');
   }
 }
 
@@ -126,6 +126,6 @@ export async function getWithAuthToken<T>(path: string, token: string) {
         : '다시 로그인 해주세요';
       throw new Error(message);
     }
-    throw new Error('다시 로그인 해주세요');
+    throw new Error((err as Error).message);
   }
 }

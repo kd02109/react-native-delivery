@@ -28,5 +28,14 @@ export const userSlice = createSlice({
     setMoney(state, action: PayloadAction<number>) {
       state.money = action.payload;
     },
+    setAccesToken(state, action: PayloadAction<string>) {
+      state.accessToken = action.payload;
+    },
+    setReset(state) {
+      state.accessToken = '';
+      state.email = '';
+      state.name = '';
+      state.refreshToken = '';
+    },
   },
 });
