@@ -1,16 +1,17 @@
-import {postWithToken} from '@/api';
+import {postWithAuthToken} from '@/api';
 import {REFRESH_TOKEN} from '@/lib/constant';
 import {deleteStorage} from '@/lib/encryptedStorage';
 import {userSlice} from '@/slice/user';
-import {useAppDispatch} from '@/store';
+import {useAppDispatch, useAppSelector} from '@/store';
 import React from 'react';
 import {Text, View, Pressable, Alert, StyleSheet} from 'react-native';
 
 export default function Settings() {
   const dispatch = useAppDispatch();
+  const token = useAppSelector(state => state.user.accessToken);
   const onLogout = async () => {
     try {
-      await postWithToken('/logout');
+      await postWithAuthToken('/logout', token);
       Alert.alert('알림', '로그아웃 되었습니다.');
       dispatch(
         userSlice.actions.setUser({

@@ -8,7 +8,7 @@ import React, {useEffect} from 'react';
 import SignIn from '@page/SignIn';
 import SignUp from '@page/SignUp';
 import {useAppDispatch, useAppSelector} from '@/store';
-import {postWithToken} from '@/api';
+import {postWithRefreshToken} from '@/api';
 import {Alert} from 'react-native';
 import {UserState, userSlice} from '@/slice/user';
 import useSocket from '@/hook/useSocket';
@@ -34,7 +34,7 @@ export default function AppNavigator() {
 
   // 토큰 재발급
   useEffect(() => {
-    postWithToken<UserState | string>('/refreshToken').then(data => {
+    postWithRefreshToken<UserState | string>('/refreshToken').then(data => {
       if (typeof data === 'string') {
         Alert.alert('알림', data);
       } else {
