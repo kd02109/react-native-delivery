@@ -48,7 +48,7 @@ export default function AppNavigator() {
   // socket 활용하기
   useEffect(() => {
     const callback = (data: Order) => {
-      console.log(data);
+      //console.log(data);
       dispatch(orderSlice.actions.addOrder(data));
     };
     if (socket && isLoggedIn) {

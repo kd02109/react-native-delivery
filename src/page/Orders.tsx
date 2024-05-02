@@ -1,10 +1,17 @@
+import OrderItem from '@/components/OrderItem';
+import {useAppSelector} from '@/store';
 import React from 'react';
-import {Text, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 
 export default function Orders() {
+  const orders = useAppSelector(state => state.order.orders);
   return (
     <View>
-      <Text>Orders</Text>
+      <FlatList
+        data={orders}
+        keyExtractor={item => item.orderId}
+        renderItem={item => <OrderItem {...item} />}
+      />
     </View>
   );
 }
