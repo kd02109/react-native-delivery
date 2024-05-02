@@ -84,7 +84,7 @@ export async function postWithRefreshToken<T>(path: string) {
         : '다시 로그인 해주세요';
       throw new Error(message);
     }
-    return '다시 로그인 해주세요';
+    throw new Error('다시 로그인 해주세요');
   }
 }
 
@@ -109,6 +109,6 @@ export async function postWithAuthToken<T>(path: string, token: string) {
         : '다시 로그인 해주세요';
       throw new Error(message);
     }
-    return '다시 로그인 해주세요';
+    throw new Error('다시 로그인 해주세요');
   }
 }

@@ -12,6 +12,8 @@ import {postWithRefreshToken} from '@/api';
 import {Alert} from 'react-native';
 import {UserState, userSlice} from '@/slice/user';
 import useSocket from '@/hook/useSocket';
+import {orderSlice} from '@/slice/order';
+import {Order} from '@/type';
 
 export type LoggedInParamList = {
   Orders: undefined;
@@ -45,20 +47,21 @@ export default function AppNavigator() {
 
   // socket 활용하기
   useEffect(() => {
-    const callback = (data: any) => {
+    const callback = (data: Order) => {
       console.log(data);
+      dispatch(orderSlice.actions.addOrder(data));
     };
     if (socket && isLoggedIn) {
-      socket.emit('login', 'hello');
-      socket.on('hello', callback);
+      socket.emit('acceptOrder', 'hello');
+      socket.on('order', callback);
     }
 
     return () => {
       if (socket) {
-        socket.off('hello', callback);
+        socket.off('order', callback);
       }
     };
-  }, [socket, isLoggedIn]);
+  }, [socket, isLoggedIn, dispatch]);
 
   // disconnect
   useEffect(() => {
