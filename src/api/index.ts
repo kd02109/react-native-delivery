@@ -8,9 +8,6 @@ import axios, {AxiosError, AxiosResponse, isAxiosError} from 'axios';
 
 import Config from 'react-native-config';
 
-// 에뮬레이터 내부 주소
-export const SERVER = 'http://10.0.2.2:3105';
-
 export const instance = axios.create({
   baseURL: Config.API_URL,
 });
