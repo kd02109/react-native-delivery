@@ -8,10 +8,8 @@ import {userSlice} from '@/slice/user';
 import {useAppDispatch, useAppSelector} from '@/store';
 import {Order} from '@/type';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
-
 import {LoggedInParamList} from 'AppNavigator';
 import React, {useState} from 'react';
-
 import {
   Text,
   View,
@@ -20,7 +18,9 @@ import {
   ListRenderItemInfo,
   ActivityIndicator,
   Alert,
+  Dimensions,
 } from 'react-native';
+import NaverMapView, {Marker, Path} from 'react-native-nmap';
 import Animated from 'react-native-reanimated';
 
 export default function OrderItem(props: ListRenderItemInfo<Order>) {
@@ -36,7 +36,7 @@ export default function OrderItem(props: ListRenderItemInfo<Order>) {
 
   const onToggle = () => {
     setIsOpen(prev => !prev);
-    height.value = isOpen ? 0 : 100;
+    height.value = isOpen ? 0 : 320;
   };
 
   const onAccept = async () => {
@@ -85,8 +85,44 @@ export default function OrderItem(props: ListRenderItemInfo<Order>) {
         <Animated.View style={animatedStyles}>
           {isOpen && (
             <View>
-              <View>
-                <Text>네이버 맵</Text>
+              <View
+                style={{
+                  width: Dimensions.get('window').width - 30,
+                  height: 200,
+                  marginTop: 10,
+                }}>
+                <NaverMapView
+                  style={{width: '100%', height: '100%'}}
+                  zoomControl={true}
+                  center={{
+                    zoom: 10,
+                    tilt: 50,
+                    latitude: (start.latitude + end.latitude) / 2,
+                    longitude: (start.longitude + end.longitude) / 2,
+                  }}>
+                  <Marker
+                    coordinate={{
+                      latitude: start.latitude,
+                      longitude: start.longitude,
+                    }}
+                    pinColor="blue"
+                  />
+                  <Path
+                    coordinates={[
+                      {
+                        latitude: start.latitude,
+                        longitude: start.longitude,
+                      },
+                      {latitude: end.latitude, longitude: end.longitude},
+                    ]}
+                  />
+                  <Marker
+                    coordinate={{
+                      latitude: end.latitude,
+                      longitude: end.longitude,
+                    }}
+                  />
+                </NaverMapView>
               </View>
               <View style={styles.buttonWrapper}>
                 <Pressable onPress={onAccept} style={styles.acceptButton}>
@@ -123,6 +159,7 @@ const styles = StyleSheet.create({
   },
   buttonWrapper: {
     flexDirection: 'row',
+    marginTop: 10,
   },
   acceptButton: {
     backgroundColor: 'blue',
