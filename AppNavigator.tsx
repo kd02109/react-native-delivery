@@ -14,6 +14,7 @@ import {UserState, userSlice} from '@/slice/user';
 import useSocket from '@/hook/useSocket';
 import {orderSlice} from '@/slice/order';
 import {Order} from '@/type';
+import usePermissions from '@/hook/usePermissions';
 
 export type LoggedInParamList = {
   Orders: undefined;
@@ -27,12 +28,13 @@ export type RootStackParamList = {
   SignUp: undefined;
 };
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<LoggedInParamList>();
 const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function AppNavigator() {
   const isLoggedIn = useAppSelector(state => !!state.user.email);
   const dispatch = useAppDispatch();
   const [socket, disconnect] = useSocket();
+  usePermissions();
 
   // 토큰 재발급
   useEffect(() => {

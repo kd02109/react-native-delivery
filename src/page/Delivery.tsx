@@ -3,17 +3,27 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Ing from '@page/Ing';
 import Complete from '@page/Complete';
 
-const Stack = createNativeStackNavigator();
+export type DeliveryStackParamList = {
+  Ing: undefined;
+  Complete: undefined;
+};
+
+export const DeliveryStack =
+  createNativeStackNavigator<DeliveryStackParamList>();
 
 export default function Delivery() {
   return (
-    <Stack.Navigator initialRouteName="Ing">
-      <Stack.Screen component={Ing} name="Ing" options={{headerShown: false}} />
-      <Stack.Screen
+    <DeliveryStack.Navigator initialRouteName="Ing">
+      <DeliveryStack.Screen
+        component={Ing}
+        name="Ing"
+        options={{headerShown: true}}
+      />
+      <DeliveryStack.Screen
         component={Complete}
         name="Complete"
-        options={{headerShown: false}}
+        options={{headerShown: true}}
       />
-    </Stack.Navigator>
+    </DeliveryStack.Navigator>
   );
 }
