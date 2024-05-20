@@ -3162,6 +3162,8 @@ __metadata:
     react-native: 0.74.0
     react-native-config: ^1.5.1
     react-native-encrypted-storage: ^4.0.3
+    react-native-image-crop-picker: ^0.41.1
+    react-native-image-resizer: ^1.4.5
     react-native-keyboard-aware-scroll-view: ^0.9.5
     react-native-nmap: "github:zerocho/react-native-naver-map"
     react-native-permissions: ^4.1.5
@@ -8373,6 +8375,24 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 9d2999c58559f1e4f66d1baf2c3edeff96cf42027900850d94c6bbea24ac9715047ce69bf6e8a73b68aff4508cf35dd88ac494ad5905933286ef3b75cd123e30
+  languageName: node
+  linkType: hard
+
+"react-native-image-crop-picker@npm:^0.41.1":
+  version: 0.41.1
+  resolution: "react-native-image-crop-picker@npm:0.41.1"
+  peerDependencies:
+    react-native: ">=0.40.0"
+  checksum: e8c1b6fad6d52e32be5b684dde8f82830b31ef62cdc42591ef98534cbc7bd566b826670f6fde0401dfe1cc97c1fc5d0476e582c804b7e258db1885eac28c7800
+  languageName: node
+  linkType: hard
+
+"react-native-image-resizer@npm:^1.4.5":
+  version: 1.4.5
+  resolution: "react-native-image-resizer@npm:1.4.5"
+  peerDependencies:
+    react-native: ">=v0.40.0"
+  checksum: c530b119f25c27b669148461554440acd05fb37f0a24a1afc3d58c861e426551c70c679983c0399034fd54ca3575c89d0863778c49295721cb33b65bbf3f0f37
   languageName: node
   linkType: hard
 
