@@ -1,0 +1,733 @@
+diff --git a/node_modules/react-native-image-crop-picker/android/.gradle/config.properties b/node_modules/react-native-image-crop-picker/android/.gradle/config.properties
+new file mode 100644
+index 0000000..49c57ff
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/.gradle/config.properties
+@@ -0,0 +1,2 @@
++#Mon May 20 12:30:43 KST 2024
++java.home=C\:\\Program Files\\Android\\Android Studio\\jbr
+diff --git a/node_modules/react-native-image-crop-picker/android/.idea/.gitignore b/node_modules/react-native-image-crop-picker/android/.idea/.gitignore
+new file mode 100644
+index 0000000..26d3352
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/.idea/.gitignore
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+diff --git a/node_modules/react-native-image-crop-picker/android/.idea/gradle.xml b/node_modules/react-native-image-crop-picker/android/.idea/gradle.xml
+new file mode 100644
+index 0000000..89935b5
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/.idea/gradle.xml
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
++        <option name="resolveExternalAnnotations" value="false" />
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/.idea/migrations.xml b/node_modules/react-native-image-crop-picker/android/.idea/migrations.xml
+new file mode 100644
+index 0000000..f8051a6
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/.idea/migrations.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectMigrations">
++    <option name="MigrateToGradleLocalJavaHome">
++      <set>
++        <option value="$PROJECT_DIR$" />
++      </set>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/.idea/misc.xml b/node_modules/react-native-image-crop-picker/android/.idea/misc.xml
+new file mode 100644
+index 0000000..3040d03
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/.idea/misc.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="ProjectRootManager">
++    <output url="file://$PROJECT_DIR$/build/classes" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="Android" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/.idea/vcs.xml b/node_modules/react-native-image-crop-picker/android/.idea/vcs.xml
+new file mode 100644
+index 0000000..c2365ab
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/.idea/vcs.xml
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/.idea/workspace.xml b/node_modules/react-native-image-crop-picker/android/.idea/workspace.xml
+new file mode 100644
+index 0000000..1e21774
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/.idea/workspace.xml
+@@ -0,0 +1,49 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="NONE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="022b5e06-da97-4863-99c2-e6ec18bcd371" name="Changes" comment="" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="ClangdSettings">
++    <option name="formatViaClangd" value="false" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
++  </component>
++  <component name="ProjectColorInfo"><![CDATA[{
++  "associatedIndex": 5
++}]]></component>
++  <component name="ProjectId" id="2giMFevAA3gk92ACGqcrQwW9F2j" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.cidr.known.project.marker": "true",
++    "android.gradle.sync.needed": "true",
++    "cf.first.check.clang-format": "false",
++    "cidr.known.project.marker": "true",
++    "last_opened_file_path": "C:/Users/js953/Desktop/Github/ReactnativeDelivery/node_modules/react-native-image-crop-picker/android"
++  }
++}]]></component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="022b5e06-da97-4863-99c2-e6ec18bcd371" name="Changes" comment="" />
++      <created>1716175843505</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1716175843505</updated>
++    </task>
++    <servers />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/.transforms/ec38eb91d6e4d5a055dd21d8727676aa/results.bin b/node_modules/react-native-image-crop-picker/android/build/.transforms/ec38eb91d6e4d5a055dd21d8727676aa/results.bin
+new file mode 100644
+index 0000000..0d259dd
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/.transforms/ec38eb91d6e4d5a055dd21d8727676aa/results.bin
+@@ -0,0 +1 @@
++o/classes
+diff --git a/node_modules/react-native-image-crop-picker/android/build/.transforms/ec38eb91d6e4d5a055dd21d8727676aa/transformed/classes/classes_dex/classes.dex b/node_modules/react-native-image-crop-picker/android/build/.transforms/ec38eb91d6e4d5a055dd21d8727676aa/transformed/classes/classes_dex/classes.dex
+new file mode 100644
+index 0000000..5fde750
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/.transforms/ec38eb91d6e4d5a055dd21d8727676aa/transformed/classes/classes_dex/classes.dex differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/generated/source/buildConfig/debug/com/reactnative/ivpusic/imagepicker/BuildConfig.java b/node_modules/react-native-image-crop-picker/android/build/generated/source/buildConfig/debug/com/reactnative/ivpusic/imagepicker/BuildConfig.java
+new file mode 100644
+index 0000000..74a36dd
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/generated/source/buildConfig/debug/com/reactnative/ivpusic/imagepicker/BuildConfig.java
+@@ -0,0 +1,10 @@
++/**
++ * Automatically generated file. DO NOT MODIFY
++ */
++package com.reactnative.ivpusic.imagepicker;
++
++public final class BuildConfig {
++  public static final boolean DEBUG = Boolean.parseBoolean("true");
++  public static final String LIBRARY_PACKAGE_NAME = "com.reactnative.ivpusic.imagepicker";
++  public static final String BUILD_TYPE = "debug";
++}
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml b/node_modules/react-native-image-crop-picker/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml
+new file mode 100644
+index 0000000..6a72a7c
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml
+@@ -0,0 +1,31 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.reactnative.ivpusic.imagepicker" >
++
++    <uses-sdk android:minSdkVersion="23" />
++
++    <queries>
++        <intent>
++            <action android:name="android.media.action.IMAGE_CAPTURE" />
++        </intent>
++    </queries>
++
++    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
++
++    <application>
++        <provider
++            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
++            android:authorities="dollar_openBracket_applicationId_closeBracket.provider"
++            android:exported="false"
++            android:grantUriPermissions="true" >
++            <meta-data
++                android:name="android.support.FILE_PROVIDER_PATHS"
++                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
++        </provider>
++
++        <activity
++            android:name="com.yalantis.ucrop.UCropActivity"
++            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
++    </application>
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json b/node_modules/react-native-image-crop-picker/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json
+new file mode 100644
+index 0000000..a34b0f9
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json
+@@ -0,0 +1,18 @@
++{
++  "version": 3,
++  "artifactType": {
++    "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
++    "kind": "Directory"
++  },
++  "applicationId": "com.reactnative.ivpusic.imagepicker",
++  "variantName": "debug",
++  "elements": [
++    {
++      "type": "SINGLE",
++      "filters": [],
++      "attributes": [],
++      "outputFile": "AndroidManifest.xml"
++    }
++  ],
++  "elementType": "File"
++}
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/aar_metadata/debug/aar-metadata.properties b/node_modules/react-native-image-crop-picker/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
+new file mode 100644
+index 0000000..1211b1e
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/aar_metadata/debug/aar-metadata.properties
+@@ -0,0 +1,6 @@
++aarFormatVersion=1.0
++aarMetadataVersion=1.0
++minCompileSdk=1
++minCompileSdkExtension=0
++minAndroidGradlePluginVersion=1.0.0
++coreLibraryDesugaringEnabled=false
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json b/node_modules/react-native-image-crop-picker/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json
+new file mode 100644
+index 0000000..9e26dfe
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/annotation_processor_list/debug/annotationProcessors.json
+@@ -0,0 +1 @@
++{}
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/compile_library_classes_jar/debug/classes.jar b/node_modules/react-native-image-crop-picker/android/build/intermediates/compile_library_classes_jar/debug/classes.jar
+new file mode 100644
+index 0000000..95360b2
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/compile_library_classes_jar/debug/classes.jar differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/compile_r_class_jar/debug/R.jar b/node_modules/react-native-image-crop-picker/android/build/intermediates/compile_r_class_jar/debug/R.jar
+new file mode 100644
+index 0000000..7ed4d47
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/compile_r_class_jar/debug/R.jar differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/compile_symbol_list/debug/R.txt b/node_modules/react-native-image-crop-picker/android/build/intermediates/compile_symbol_list/debug/R.txt
+new file mode 100644
+index 0000000..c3aa536
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/compile_symbol_list/debug/R.txt
+@@ -0,0 +1 @@
++int xml ivpusic_imagepicker_provider_paths 0x0
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/compiled_local_resources/debug/out/xml_ivpusic_imagepicker_provider_paths.xml.flat b/node_modules/react-native-image-crop-picker/android/build/intermediates/compiled_local_resources/debug/out/xml_ivpusic_imagepicker_provider_paths.xml.flat
+new file mode 100644
+index 0000000..e50b1b8
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/compiled_local_resources/debug/out/xml_ivpusic_imagepicker_provider_paths.xml.flat differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+new file mode 100644
+index 0000000..2da50c8
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+@@ -0,0 +1,2 @@
++#Mon May 20 09:57:42 KST 2024
++com.reactnative.ivpusic.imagepicker.react-native-image-crop-picker-main-6\:/xml/ivpusic_imagepicker_provider_paths.xml=C\:\\Users\\js953\\Desktop\\Github\\ReactnativeDelivery\\node_modules\\react-native-image-crop-picker\\android\\build\\intermediates\\packaged_res\\debug\\xml\\ivpusic_imagepicker_provider_paths.xml
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+new file mode 100644
+index 0000000..bb9314a
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\res"><file name="ivpusic_imagepicker_provider_paths" path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\res\xml\ivpusic_imagepicker_provider_paths.xml" qualifiers="" type="xml"/></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\build\generated\res\resValues\debug"/></dataSet><mergedItems/></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+new file mode 100644
+index 0000000..bd62f59
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\debug\jniLibs"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/mergeDebugShaders/merger.xml b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+new file mode 100644
+index 0000000..e3ba951
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/mergeDebugShaders/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\debug\shaders"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/packageDebugAssets/merger.xml b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/packageDebugAssets/merger.xml
+new file mode 100644
+index 0000000..e9534a3
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/incremental/packageDebugAssets/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\assets"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\debug\assets"/></dataSet><dataSet config="generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\build\intermediates\shader_assets\debug\out"/></dataSet></merger>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/BuildConfig.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/BuildConfig.class
+new file mode 100644
+index 0000000..8d51143
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/BuildConfig.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/Compression.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/Compression.class
+new file mode 100644
+index 0000000..8983e8a
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/Compression.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/ExifExtractor.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/ExifExtractor.class
+new file mode 100644
+index 0000000..39904dc
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/ExifExtractor.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/GeoDegree.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/GeoDegree.class
+new file mode 100644
+index 0000000..cd9bdba
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/GeoDegree.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/IvpusicImagePickerFileProvider.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/IvpusicImagePickerFileProvider.class
+new file mode 100644
+index 0000000..d7d59de
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/IvpusicImagePickerFileProvider.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$1.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$1.class
+new file mode 100644
+index 0000000..7373772
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$1.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$2.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$2.class
+new file mode 100644
+index 0000000..7f649f4
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$2.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$3.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$3.class
+new file mode 100644
+index 0000000..1a0346b
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$3.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$4.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$4.class
+new file mode 100644
+index 0000000..9f7c940
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$4.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$5.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$5.class
+new file mode 100644
+index 0000000..290dfa8
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$5.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$6.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$6.class
+new file mode 100644
+index 0000000..cbfb0a6
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$6.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$7$1.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$7$1.class
+new file mode 100644
+index 0000000..7096a7a
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$7$1.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$7$2.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$7$2.class
+new file mode 100644
+index 0000000..f49b6de
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$7$2.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$7.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$7.class
+new file mode 100644
+index 0000000..fe69193
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule$7.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule.class
+new file mode 100644
+index 0000000..a4c31b6
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerModule.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerPackage.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerPackage.class
+new file mode 100644
+index 0000000..d0ef52f
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/PickerPackage.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/RealPathUtil.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/RealPathUtil.class
+new file mode 100644
+index 0000000..e229606
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/RealPathUtil.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/ResultCollector.class b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/ResultCollector.class
+new file mode 100644
+index 0000000..068c812
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/javac/debug/classes/com/reactnative/ivpusic/imagepicker/ResultCollector.class differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/local_only_symbol_list/debug/R-def.txt b/node_modules/react-native-image-crop-picker/android/build/intermediates/local_only_symbol_list/debug/R-def.txt
+new file mode 100644
+index 0000000..192ed14
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/local_only_symbol_list/debug/R-def.txt
+@@ -0,0 +1,3 @@
++R_DEF: Internal format may change without notice
++local
++xml ivpusic_imagepicker_provider_paths
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt b/node_modules/react-native-image-crop-picker/android/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt
+new file mode 100644
+index 0000000..0ab8cab
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt
+@@ -0,0 +1,49 @@
++1<?xml version="1.0" encoding="utf-8"?>
++2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++3    package="com.reactnative.ivpusic.imagepicker" >
++4
++5    <uses-sdk android:minSdkVersion="23" />
++6
++7    <queries>
++7-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:4:5-8:15
++8        <intent>
++8-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:5:9-7:18
++9            <action android:name="android.media.action.IMAGE_CAPTURE" />
++9-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:6:13-73
++9-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:6:21-70
++10        </intent>
++11    </queries>
++12
++13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
++13-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:10:5-81
++13-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:10:22-78
++14
++15    <application>
++15-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:12:5-27:19
++16        <provider
++16-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:14:9-22:20
++17            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
++17-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:15:13-59
++18            android:authorities="${applicationId}.provider"
++18-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:16:13-60
++19            android:exported="false"
++19-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:17:13-37
++20            android:grantUriPermissions="true" >
++20-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:18:13-47
++21            <meta-data
++21-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:19:13-21:78
++22                android:name="android.support.FILE_PROVIDER_PATHS"
++22-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:20:17-67
++23                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
++23-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:21:17-75
++24        </provider>
++25
++26        <activity
++26-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:24:9-26:72
++27            android:name="com.yalantis.ucrop.UCropActivity"
++27-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:25:13-60
++28            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
++28-->C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:26:13-69
++29    </application>
++30
++31</manifest>
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml b/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml
+new file mode 100644
+index 0000000..881b093
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml
+@@ -0,0 +1,31 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.reactnative.ivpusic.imagepicker" >
++
++    <uses-sdk android:minSdkVersion="23" />
++
++    <queries>
++        <intent>
++            <action android:name="android.media.action.IMAGE_CAPTURE" />
++        </intent>
++    </queries>
++
++    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
++
++    <application>
++        <provider
++            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
++            android:authorities="${applicationId}.provider"
++            android:exported="false"
++            android:grantUriPermissions="true" >
++            <meta-data
++                android:name="android.support.FILE_PROVIDER_PATHS"
++                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
++        </provider>
++
++        <activity
++            android:name="com.yalantis.ucrop.UCropActivity"
++            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
++    </application>
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/navigation_json/debug/navigation.json b/node_modules/react-native-image-crop-picker/android/build/intermediates/navigation_json/debug/navigation.json
+new file mode 100644
+index 0000000..0637a08
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/navigation_json/debug/navigation.json
+@@ -0,0 +1 @@
++[]
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/packaged_res/debug/xml/ivpusic_imagepicker_provider_paths.xml b/node_modules/react-native-image-crop-picker/android/build/intermediates/packaged_res/debug/xml/ivpusic_imagepicker_provider_paths.xml
+new file mode 100644
+index 0000000..ffa74ab
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/packaged_res/debug/xml/ivpusic_imagepicker_provider_paths.xml
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="utf-8"?>
++<paths xmlns:android="http://schemas.android.com/apk/res/android">
++    <external-path name="external_files" path="."/>
++</paths>
+\ No newline at end of file
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar b/node_modules/react-native-image-crop-picker/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar
+new file mode 100644
+index 0000000..dde24ab
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt b/node_modules/react-native-image-crop-picker/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
+new file mode 100644
+index 0000000..9cc946a
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
+@@ -0,0 +1,2 @@
++com.reactnative.ivpusic.imagepicker
++xml ivpusic_imagepicker_provider_paths
+diff --git a/node_modules/react-native-image-crop-picker/android/build/outputs/logs/manifest-merger-debug-report.txt b/node_modules/react-native-image-crop-picker/android/build/outputs/logs/manifest-merger-debug-report.txt
+new file mode 100644
+index 0000000..4b6bc66
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/build/outputs/logs/manifest-merger-debug-report.txt
+@@ -0,0 +1,53 @@
++-- Merging decision tree log ---
++manifest
++ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:1:1-29:12
++INJECTED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:1:1-29:12
++	package
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:2:5-50
++		INJECTED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml
++	xmlns:android
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:1:11-69
++queries
++ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:4:5-8:15
++intent#action:name:android.media.action.IMAGE_CAPTURE
++ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:5:9-7:18
++action#android.media.action.IMAGE_CAPTURE
++ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:6:13-73
++	android:name
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:6:21-70
++uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
++ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:10:5-81
++	android:name
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:10:22-78
++application
++ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:12:5-27:19
++provider#com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider
++ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:14:9-22:20
++	android:grantUriPermissions
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:18:13-47
++	android:authorities
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:16:13-60
++	android:exported
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:17:13-37
++	android:name
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:15:13-59
++meta-data#android.support.FILE_PROVIDER_PATHS
++ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:19:13-21:78
++	android:resource
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:21:17-75
++	android:name
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:20:17-67
++activity#com.yalantis.ucrop.UCropActivity
++ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:24:9-26:72
++	android:theme
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:26:13-69
++	android:name
++		ADDED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml:25:13-60
++uses-sdk
++INJECTED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
++INJECTED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml
++INJECTED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml
++	android:targetSdkVersion
++		INJECTED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml
++	android:minSdkVersion
++		INJECTED from C:\Users\js953\Desktop\Github\ReactnativeDelivery\node_modules\react-native-image-crop-picker\android\src\main\AndroidManifest.xml
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$1.class.uniqueId8 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$1.class.uniqueId8
+new file mode 100644
+index 0000000..8dfd222
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$1.class.uniqueId8 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$2.class.uniqueId0 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$2.class.uniqueId0
+new file mode 100644
+index 0000000..6796bac
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$2.class.uniqueId0 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$3.class.uniqueId3 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$3.class.uniqueId3
+new file mode 100644
+index 0000000..87865fa
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$3.class.uniqueId3 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$4.class.uniqueId9 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$4.class.uniqueId9
+new file mode 100644
+index 0000000..949d5a0
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$4.class.uniqueId9 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$5.class.uniqueId6 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$5.class.uniqueId6
+new file mode 100644
+index 0000000..713e302
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$5.class.uniqueId6 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$6.class.uniqueId10 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$6.class.uniqueId10
+new file mode 100644
+index 0000000..89ca6b8
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$6.class.uniqueId10 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$7$1.class.uniqueId7 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$7$1.class.uniqueId7
+new file mode 100644
+index 0000000..7b648cf
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$7$1.class.uniqueId7 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$7$2.class.uniqueId4 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$7$2.class.uniqueId4
+new file mode 100644
+index 0000000..65bf926
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$7$2.class.uniqueId4 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$7.class.uniqueId5 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$7.class.uniqueId5
+new file mode 100644
+index 0000000..38dd4b6
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule$7.class.uniqueId5 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule.class.uniqueId1 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule.class.uniqueId1
+new file mode 100644
+index 0000000..0773e2b
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerModule.class.uniqueId1 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerPackage.class.uniqueId2 b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerPackage.class.uniqueId2
+new file mode 100644
+index 0000000..d0ef52f
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/compileTransaction/stash-dir/PickerPackage.class.uniqueId2 differ
+diff --git a/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin
+new file mode 100644
+index 0000000..5df53aa
+Binary files /dev/null and b/node_modules/react-native-image-crop-picker/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin differ
+diff --git a/node_modules/react-native-image-crop-picker/android/local.properties b/node_modules/react-native-image-crop-picker/android/local.properties
+new file mode 100644
+index 0000000..d5c24c3
+--- /dev/null
++++ b/node_modules/react-native-image-crop-picker/android/local.properties
+@@ -0,0 +1,8 @@
++## This file must *NOT* be checked into Version Control Systems,
++# as it contains information specific to your local configuration.
++#
++# Location of the SDK. This is only used by Gradle.
++# For customization when using a Version Control System, please read the
++# header note.
++#Mon May 20 12:30:43 KST 2024
++sdk.dir=C\:\\Users\\js953\\AppData\\Local\\Android\\Sdk
+diff --git a/node_modules/react-native-image-crop-picker/android/src/main/java/com/reactnative/ivpusic/imagepicker/PickerModule.java b/node_modules/react-native-image-crop-picker/android/src/main/java/com/reactnative/ivpusic/imagepicker/PickerModule.java
+index 5de0845..0ff2399 100644
+--- a/node_modules/react-native-image-crop-picker/android/src/main/java/com/reactnative/ivpusic/imagepicker/PickerModule.java
++++ b/node_modules/react-native-image-crop-picker/android/src/main/java/com/reactnative/ivpusic/imagepicker/PickerModule.java
+@@ -5,6 +5,7 @@ import android.app.Activity;
+ import android.content.ClipData;
+ import android.content.Context;
+ import android.content.ContentResolver;
++import android.content.ContentValues;
+ import android.content.Intent;
+ import android.content.pm.PackageManager;
+ import android.graphics.Bitmap;
+@@ -85,6 +86,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
+     private boolean freeStyleCropEnabled = false;
+     private boolean showCropGuidelines = true;
+     private boolean showCropFrame = true;
++    private boolean saveToPhotos = false;
+     private boolean hideBottomControls = false;
+     private boolean enableRotationGesture = false;
+     private boolean disableCropperColorSetters = false;
+@@ -145,6 +147,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
+         enableRotationGesture = options.hasKey("enableRotationGesture") && options.getBoolean("enableRotationGesture");
+         disableCropperColorSetters = options.hasKey("disableCropperColorSetters") && options.getBoolean("disableCropperColorSetters");
+         useFrontCamera = options.hasKey("useFrontCamera") && options.getBoolean("useFrontCamera");
++        saveToPhotos = options.hasKey("saveToPhotos") && options.getBoolean("saveToPhotos");
+         this.options = options;
+     }
+ 
+@@ -876,11 +879,47 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
+         if (requestCode == IMAGE_PICKER_REQUEST) {
+             imagePickerResult(activity, requestCode, resultCode, data);
+         } else if (requestCode == CAMERA_PICKER_REQUEST) {
++            if (saveToPhotos) {
++                saveToPublicDirectory(mCameraCaptureURI, reactContext, "photo");
++            }
+             cameraPickerResult(activity, requestCode, resultCode, data);
+         } else if (requestCode == UCrop.REQUEST_CROP) {
+             croppingResult(activity, requestCode, resultCode, data);
+         }
+     }
++    public static void saveToPublicDirectory(Uri uri, ReactApplicationContext context, String mediaType) {
++        ContentResolver resolver = context.getContentResolver();
++        Uri mediaStoreUri;
++        ContentValues fileDetails = new ContentValues();
++
++        if (mediaType.equals("video")) {
++            fileDetails.put(MediaStore.Video.Media.DISPLAY_NAME, UUID.randomUUID().toString());
++            fileDetails.put(MediaStore.Video.Media.MIME_TYPE, resolver.getType(uri));
++            mediaStoreUri = resolver.insert(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, fileDetails);
++        } else {
++            fileDetails.put(MediaStore.Images.Media.DISPLAY_NAME, UUID.randomUUID().toString());
++            fileDetails.put(MediaStore.Video.Media.MIME_TYPE, resolver.getType(uri));
++            mediaStoreUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, fileDetails);
++        }
++        copyUri(uri, mediaStoreUri, resolver);
++    }
++
++    public static void copyUri(Uri fromUri, Uri toUri, ContentResolver resolver) {
++        try {
++            OutputStream os = resolver.openOutputStream(toUri);
++            InputStream is = resolver.openInputStream(fromUri);
++
++            byte[] buffer = new byte[8192];
++            int bytesRead;
++
++            while ((bytesRead = is.read(buffer)) != -1) {
++                os.write(buffer, 0, bytesRead);
++            }
++
++        } catch (IOException e) {
++            e.printStackTrace();
++        }
++    }
+ 
+     @Override
+     public void onNewIntent(Intent intent) {
+diff --git a/node_modules/react-native-image-crop-picker/index.d.ts b/node_modules/react-native-image-crop-picker/index.d.ts
+index d3e1fd4..ce40419 100644
+--- a/node_modules/react-native-image-crop-picker/index.d.ts
++++ b/node_modules/react-native-image-crop-picker/index.d.ts
+@@ -340,6 +340,14 @@ declare module "react-native-image-crop-picker" {
+          * @default Android: 1, iOS: 0.8
+          */
+         compressImageQuality?: number;
++
++
++        /**
++         * When set to true, the Image file content will be saved to your file system
++         * 
++         * @default false
++         */
++        saveToPhotos?: boolean;
+     }
+ 
+     type CropperOptions = ImageOptions & {
