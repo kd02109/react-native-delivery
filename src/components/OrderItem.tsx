@@ -57,13 +57,13 @@ export default function OrderItem(props: ListRenderItemInfo<Order>) {
           dispatch(userSlice.actions.setReset());
         }
       }
-      dispatch(orderSlice.actions.rejectOrider(item.orderId));
+      dispatch(orderSlice.actions.rejectOrder(item.orderId));
       setLoading(prev => !prev);
     }
   };
 
   const onReject = async () => {
-    dispatch(orderSlice.actions.rejectOrider(item.orderId));
+    dispatch(orderSlice.actions.rejectOrder(item.orderId));
   };
   return (
     <View style={styles.orderContainer}>

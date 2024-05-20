@@ -125,24 +125,20 @@ export async function postWithAuthToken<T, Body>(
   path: string,
   token: string,
   data?: Body,
+  type: 'multipart/form-data' | 'Application/json' = 'Application/json',
 ) {
-  try {
-    const response = await instance.post<any, AxiosResponse<{data: T}>>(
-      path,
-      data,
-      {
-        headers: {Authorization: token},
+  console.log(data, path, token);
+  const response = await instance.post<any, AxiosResponse<{data: T}>>(
+    path,
+    data,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': type,
       },
-    );
-    return response.data.data;
-  } catch (err) {
-    if (err instanceof AxiosError) {
-      const message = err.response!.data.message;
-
-      throw new Error(message);
-    }
-    throw new Error('로그인 기간이 만료되었습니다.');
-  }
+    },
+  );
+  return response.data.data;
 }
 
 export async function getWithAuthToken<T>(path: string, token: string) {

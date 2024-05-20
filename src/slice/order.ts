@@ -26,7 +26,7 @@ export const orderSlice = createSlice({
         state.orders = state.orders.filter(order => order.orderId !== id);
       }
     },
-    rejectOrider(state, action: PayloadAction<string>) {
+    rejectOrder(state, action: PayloadAction<string>) {
       state.orders = state.orders.filter(
         order => order.orderId !== action.payload,
       );
