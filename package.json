@@ -5,6 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "dev:debugger": "react-native start --experimental-debugger",
+    "postinstall": "patch-package",
     "react-devtool": "npx react-devtools",
     "ios": "react-native run-ios",
     "lint": "eslint .",
@@ -58,5 +59,8 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@3.6.4",
+  "resolutions": {
+    "react-native-image-crop-picker@^0.41.1": "patch:react-native-image-crop-picker@npm%3A0.41.1#./.yarn/patches/react-native-image-crop-picker-npm-0.41.1-025e1c06e3.patch"
+  }
 }
