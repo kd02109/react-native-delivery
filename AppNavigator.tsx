@@ -19,7 +19,7 @@ import usePermissions from '@/hook/usePermissions';
 export type LoggedInParamList = {
   Orders: undefined;
   Settings: undefined;
-  Delivery: undefined;
+  Delivery: {screen?: string};
   Complete: {orderId: string};
 };
 

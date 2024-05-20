@@ -47,7 +47,7 @@ export default function OrderItem(props: ListRenderItemInfo<Order>) {
         orderId: item.orderId,
       });
       setLoading(prev => !prev);
-      navigation.navigate('Delivery');
+      navigation.navigate('Delivery', {screen: 'Ing'});
     } catch (err) {
       if (err instanceof Error) {
         Alert.alert('Error', err.message);
