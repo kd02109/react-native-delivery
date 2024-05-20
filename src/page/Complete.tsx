@@ -1,13 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {
-  Alert,
-  Dimensions,
-  Image,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Alert, Dimensions, Image, StyleSheet, Text, View} from 'react-native';
 import {
   NavigationProp,
   RouteProp,
@@ -40,9 +32,6 @@ function Complete() {
   const accessToken = useSelector((state: RootState) => state.user.accessToken);
 
   const onResponse = useCallback(async (response: ImageType) => {
-    console.log('IMAGE SIZE : ', response);
-    // 타입과 데이터 preview에 저장
-    // react native에서는 이미지 src를 source로 해고 객체로 경로를 받습니다. {uri : string}
     setPreview({uri: `data:${response.mime};base64,${response.data}`});
     const orientation = (response.exif as any)?.Orientation;
     console.log('orientation : ', orientation);
@@ -65,6 +54,7 @@ function Complete() {
   }, []);
 
   const onTakePhoto = useCallback(() => {
+    setIsLoading(true);
     return ImagePicker.openCamera({
       // 미리보기에 사용할 데이터를 Base64로 저장합니다.
       includeBase64: true,
@@ -74,17 +64,20 @@ function Complete() {
       cropping: true,
     })
       .then(onResponse)
-      .catch(console.log);
+      .catch(console.log)
+      .finally(() => setIsLoading(false));
   }, [onResponse]);
 
   const onChangeFile = useCallback(() => {
+    setIsLoading(true);
     return ImagePicker.openPicker({
       includeExif: true,
       includeBase64: true,
       mediaType: 'photo',
     })
       .then(onResponse)
-      .catch(console.log);
+      .catch(console.log)
+      .finally(() => setIsLoading(false));
   }, [onResponse]);
 
   const orderId = route.params?.orderId;
@@ -133,12 +126,20 @@ function Complete() {
         {preview && <Image style={styles.previewImage} source={preview} />}
       </View>
       <View style={styles.buttonWrapper}>
-        <Pressable style={styles.button} onPress={onTakePhoto}>
+        <Button
+          style={styles.button}
+          onPress={onTakePhoto}
+          loading={isLoading}
+          disabled={isLoading}>
           <Text style={styles.buttonText}>이미지 촬영</Text>
-        </Pressable>
-        <Pressable style={styles.button} onPress={onChangeFile}>
+        </Button>
+        <Button
+          style={styles.button}
+          onPress={onChangeFile}
+          loading={isLoading}
+          disabled={isLoading}>
           <Text style={styles.buttonText}>이미지 선택</Text>
-        </Pressable>
+        </Button>
         <Button
           style={
             image
@@ -146,7 +147,8 @@ function Complete() {
               : StyleSheet.compose(styles.button, styles.buttonDisabled)
           }
           onPress={onComplete}
-          loading={isLoading}>
+          loading={isLoading}
+          disabled={isLoading}>
           <Text style={styles.buttonText}>완료</Text>
         </Button>
       </View>
