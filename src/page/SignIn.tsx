@@ -1,14 +1,7 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from 'AppNavigator';
 import React, {useState} from 'react';
-import {
-  ActivityIndicator,
-  Alert,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Alert, Pressable, StyleSheet, Text, View} from 'react-native';
 import {SignInSchema, signInSchema} from '@/schema/schma';
 import {useForm, Controller} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
@@ -18,6 +11,7 @@ import {useAppDispatch} from '@/store';
 import {userSlice} from '@/slice/user';
 import {setStorage} from '@/lib/encryptedStorage';
 import {REFRESH_TOKEN} from '@/lib/constant';
+import Button from '@/components/Button';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SignIn'>;
 export default function SignIn({navigation}: Props) {
@@ -96,16 +90,13 @@ export default function SignIn({navigation}: Props) {
         />
       </View>
       <View>
-        <Pressable
+        <Button
           style={styles.button}
           onPress={handleSubmit(onSubmit)}
-          android_ripple={{color: '#2821de'}}>
-          {loading ? (
-            <ActivityIndicator color={'white'} />
-          ) : (
-            <Text style={styles.buttonText}>로그인</Text>
-          )}
-        </Pressable>
+          android_ripple={{color: '#2821de'}}
+          loading={loading}>
+          <Text style={styles.buttonText}>로그인</Text>
+        </Button>
         <Pressable style={styles.button} onPress={onSignUp}>
           <Text style={styles.buttonText}>회원가입</Text>
         </Pressable>

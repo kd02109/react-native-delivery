@@ -1,20 +1,14 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from 'AppNavigator';
 import React, {useState} from 'react';
-import {
-  ActivityIndicator,
-  Alert,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Alert, StyleSheet, Text, View} from 'react-native';
 import {SignUpSchema, signUpSchema} from '@/schema/schma';
 import {useForm, Controller} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import Input from '@/components/Input';
 import DismissKeyboardView from '@/components/DismisKeyboardView';
 import {postSignup} from '@/api';
+import Button from '@/components/Button';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SignUp'>;
 export default function SignUp({navigation}: Props) {
@@ -104,17 +98,14 @@ export default function SignUp({navigation}: Props) {
         />
       </View>
       <View>
-        <Pressable
+        <Button
           style={styles.button}
           onPress={handleSubmit(onSubmit)}
           disabled={loading}
-          android_ripple={{color: '#2821de'}}>
-          {loading ? (
-            <ActivityIndicator color={'white'} />
-          ) : (
-            <Text style={styles.buttonText}>회원가입</Text>
-          )}
-        </Pressable>
+          android_ripple={{color: '#2821de'}}
+          loading={loading}>
+          <Text style={styles.buttonText}>회원가입</Text>
+        </Button>
       </View>
     </DismissKeyboardView>
   );

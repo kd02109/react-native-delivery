@@ -23,13 +23,14 @@ import {RootState} from '../store';
 import {orderSlice} from '@/slice/order';
 import {useAppDispatch} from '../store';
 import {postWithAuthToken} from '@/api';
+import Button from '@/components/Button';
 
 function Complete() {
   const dispatch = useAppDispatch();
   const route = useRoute<RouteProp<LoggedInParamList, 'Complete'>>();
   const navigation =
     useNavigation<NavigationProp<LoggedInParamList, 'Complete'>>();
-
+  const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState<{
     uri: string;
     name: string;
@@ -88,6 +89,7 @@ function Complete() {
 
   const orderId = route.params?.orderId;
   const onComplete = useCallback(async () => {
+    setIsLoading(true);
     if (!image) {
       Alert.alert('알림', '파일을 업로드해주세요.');
       return;
@@ -117,6 +119,8 @@ function Complete() {
       if (errorResponse) {
         Alert.alert('알림', errorResponse.data?.message);
       }
+    } finally {
+      setIsLoading(false);
     }
   }, [dispatch, navigation, image, orderId, accessToken]);
 
@@ -135,15 +139,16 @@ function Complete() {
         <Pressable style={styles.button} onPress={onChangeFile}>
           <Text style={styles.buttonText}>이미지 선택</Text>
         </Pressable>
-        <Pressable
+        <Button
           style={
             image
               ? styles.button
               : StyleSheet.compose(styles.button, styles.buttonDisabled)
           }
-          onPress={onComplete}>
+          onPress={onComplete}
+          loading={isLoading}>
           <Text style={styles.buttonText}>완료</Text>
-        </Pressable>
+        </Button>
       </View>
     </View>
   );

@@ -1,4 +1,5 @@
 import {postWithAuthToken} from '@/api';
+import Button from '@/components/Button';
 import useHeightAnimation from '@/hook/useHeightAnimation';
 import {REFRESH_TOKEN} from '@/lib/constant';
 import {deleteStorage} from '@/lib/encryptedStorage';
@@ -16,7 +17,6 @@ import {
   StyleSheet,
   Pressable,
   ListRenderItemInfo,
-  ActivityIndicator,
   Alert,
   Dimensions,
 } from 'react-native';
@@ -125,13 +125,12 @@ export default function OrderItem(props: ListRenderItemInfo<Order>) {
                 </NaverMapView>
               </View>
               <View style={styles.buttonWrapper}>
-                <Pressable onPress={onAccept} style={styles.acceptButton}>
-                  {loading ? (
-                    <ActivityIndicator />
-                  ) : (
-                    <Text style={styles.buttonText}>수락</Text>
-                  )}
-                </Pressable>
+                <Button
+                  onPress={onAccept}
+                  style={styles.acceptButton}
+                  loading={loading}>
+                  <Text style={styles.buttonText}>수락</Text>
+                </Button>
                 <Pressable onPress={onReject} style={styles.rejectButton}>
                   <Text style={styles.buttonText}>거절</Text>
                 </Pressable>
