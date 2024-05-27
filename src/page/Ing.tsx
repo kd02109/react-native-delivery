@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Dimensions, Text, View} from 'react-native';
+import {Alert, Dimensions, Text, View} from 'react-native';
 import NaverMapView, {Marker, Path} from 'react-native-nmap';
 import {useSelector} from 'react-redux';
 import {RootState} from '@/store';
 import Geolocation from '@react-native-community/geolocation';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {LoggedInParamList} from 'AppNavigator';
+import TMap from '@/type/TMap';
 
 type IngScreenProps = NativeStackScreenProps<LoggedInParamList>;
 function Ing({navigation}: IngScreenProps) {
@@ -101,6 +102,19 @@ function Ing({navigation}: IngScreenProps) {
             anchor={{x: 0.5, y: 0.5}}
             caption={{text: '출발'}}
             image={require('../assets/blue-dot.png')}
+            onClick={() => {
+              TMap.openNavi(
+                '도착지',
+                end.longitude.toString(),
+                end.latitude.toString(),
+                'MOTORCYCLE',
+              ).then(data => {
+                console.log('TMAP : ', data);
+                if (!data) {
+                  Alert.alert('알림', '티맵을 설치하세요');
+                }
+              });
+            }}
           />
           <Path
             coordinates={[
