@@ -1,4 +1,4 @@
-package com.reactnativedelivery
+package com.reactnativedelivery;
 
 import android.util.Log;
 
