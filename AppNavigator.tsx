@@ -15,6 +15,7 @@ import useSocket from '@/hook/useSocket';
 import {orderSlice} from '@/slice/order';
 import {Order} from '@/type';
 import usePermissions from '@/hook/usePermissions';
+import SplashScreen from 'react-native-splash-screen';
 
 export type LoggedInParamList = {
   Orders: undefined;
@@ -46,6 +47,9 @@ export default function AppNavigator() {
       })
       .catch(err => {
         Alert.alert('알림', err.message);
+      })
+      .finally(() => {
+        SplashScreen.hide();
       });
   }, [dispatch]);
 
