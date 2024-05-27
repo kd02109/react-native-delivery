@@ -4,11 +4,13 @@ import {Order} from '@/type';
 export type InitialState = {
   orders: Order[];
   deliveries: Order[];
+  completes: Order[];
 };
 
 const initialState: InitialState = {
   orders: [],
   deliveries: [],
+  completes: [],
 };
 
 export const orderSlice = createSlice({
@@ -33,6 +35,9 @@ export const orderSlice = createSlice({
       state.deliveries = state.deliveries.filter(
         order => order.orderId !== action.payload,
       );
+    },
+    setCompletes(state, action: PayloadAction<Order[]>) {
+      state.completes = action.payload;
     },
   },
 });

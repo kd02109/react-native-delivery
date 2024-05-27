@@ -105,6 +105,7 @@ export default function AppNavigator() {
             options={{
               title: '내 정보',
               tabBarIcon: () => <Icon name="key" size={20} />,
+              unmountOnBlur: true,
             }}
           />
         </Tab.Navigator>

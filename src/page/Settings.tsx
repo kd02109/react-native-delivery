@@ -1,13 +1,17 @@
 import {getWithAuthToken, postWithAuthToken} from '@/api';
+import CustomImage from '@/components/Grid';
 import {REFRESH_TOKEN} from '@/lib/constant';
 import {deleteStorage} from '@/lib/encryptedStorage';
+import {orderSlice} from '@/slice/order';
 import {userSlice} from '@/slice/user';
 import {useAppDispatch, useAppSelector} from '@/store';
+import {Order} from '@/type';
 import React, {useEffect} from 'react';
-import {Text, View, Pressable, Alert, StyleSheet} from 'react-native';
+import {Text, View, Pressable, Alert, StyleSheet, FlatList} from 'react-native';
 
 export default function Settings() {
   const dispatch = useAppDispatch();
+  const completes = useAppSelector(state => state.order.completes);
   const user = useAppSelector(state => state.user);
   const onLogout = async () => {
     try {
@@ -36,6 +40,12 @@ export default function Settings() {
     );
   }, [dispatch, user.accessToken]);
 
+  useEffect(() => {
+    getWithAuthToken<Order[]>('/completes', user.accessToken).then(data =>
+      dispatch(orderSlice.actions.setCompletes(data.data)),
+    );
+  }, [user.accessToken, dispatch]);
+
   return (
     <View style={styles.container}>
       <View style={styles.moneyView}>
@@ -43,6 +53,14 @@ export default function Settings() {
         <Text style={StyleSheet.compose(styles.moneyText, styles.money)}>
           {user.money.toLocaleString('en-US')}원
         </Text>
+      </View>
+      <View>
+        <FlatList
+          data={completes}
+          numColumns={3}
+          keyExtractor={item => item.orderId}
+          renderItem={prop => <CustomImage data={prop.item} />}
+        />
       </View>
       <Pressable style={styles.button} onPress={onLogout}>
         <Text style={styles.buttonText}>로그아웃</Text>

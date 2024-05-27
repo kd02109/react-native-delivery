@@ -4,8 +4,10 @@ export type Navigation = {
 };
 export type Order = {
   end: Navigation;
+  start: Navigation;
   orderId: string;
   price: number;
-  rider: string;
-  start: Navigation;
+  rider?: string;
+  image?: string;
+  completedAt?: string;
 };
