@@ -16,6 +16,7 @@ import {orderSlice} from '@/slice/order';
 import {Order} from '@/type';
 import usePermissions from '@/hook/usePermissions';
 import SplashScreen from 'react-native-splash-screen';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export type LoggedInParamList = {
   Orders: undefined;
@@ -85,17 +86,26 @@ export default function AppNavigator() {
           <Tab.Screen
             name="Orders"
             component={Orders}
-            options={{title: '오더 목록'}}
+            options={{
+              title: '오더 목록',
+              tabBarIcon: () => <Icon name="list" size={20} />,
+            }}
           />
           <Tab.Screen
             name="Delivery"
             component={Delivery}
-            options={{headerShown: false}}
+            options={{
+              headerShown: false,
+              tabBarIcon: () => <Icon name="map" size={20} />,
+            }}
           />
           <Tab.Screen
             name="Settings"
             component={Settings}
-            options={{title: '내 정보'}}
+            options={{
+              title: '내 정보',
+              tabBarIcon: () => <Icon name="key" size={20} />,
+            }}
           />
         </Tab.Navigator>
       ) : (
