@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "421985705467",
+    "project_id": "react-native-practice-db4f4",
+    "storage_bucket": "react-native-practice-db4f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421985705467:android:fc306a6446237cd1f77f5e",
+        "android_client_info": {
+          "package_name": "com.reactnativedelivery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH6YxlVY42KInyb9owCYr9AL-FImM8Ing"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

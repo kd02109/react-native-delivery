@@ -6,6 +6,7 @@ export interface UserState {
   accessToken: string;
   refreshToken: string;
   money: number;
+  phoneToken: string;
 }
 
 const initialState: UserState = {
@@ -14,6 +15,7 @@ const initialState: UserState = {
   accessToken: '',
   refreshToken: '',
   money: 0,
+  phoneToken: '',
 };
 
 export const userSlice = createSlice({
@@ -36,6 +38,9 @@ export const userSlice = createSlice({
       state.email = '';
       state.name = '';
       state.refreshToken = '';
+    },
+    setPhoneToken(state, action: PayloadAction<string>) {
+      state.phoneToken = action.payload;
     },
   },
 });

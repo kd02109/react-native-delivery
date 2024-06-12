@@ -8,7 +8,7 @@ import React, {useEffect} from 'react';
 import SignIn from '@page/SignIn';
 import SignUp from '@page/SignUp';
 import {useAppDispatch, useAppSelector} from '@/store';
-import {postWithRefreshToken} from '@/api';
+import {instance, postWithRefreshToken} from '@/api';
 import {Alert} from 'react-native';
 import {UserState, userSlice} from '@/slice/user';
 import useSocket from '@/hook/useSocket';
@@ -17,6 +17,7 @@ import {Order} from '@/type';
 import usePermissions from '@/hook/usePermissions';
 import SplashScreen from 'react-native-splash-screen';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import messaging from '@react-native-firebase/messaging';
 
 export type LoggedInParamList = {
   Orders: undefined;
@@ -78,6 +79,30 @@ export default function AppNavigator() {
       disconnect();
     }
   }, [isLoggedIn, disconnect]);
+
+  // FCM 토큰 가지고 오기
+
+  // 토큰 설정
+  useEffect(() => {
+    async function getToken() {
+      // remote message를 위해 기기를 등록합니다.
+      try {
+        if (!messaging().isDeviceRegisteredForRemoteMessages) {
+          await messaging().registerDeviceForRemoteMessages();
+        }
+        // 이후 토큰을 받아온후 리덕스에 저장합니다.
+        const token = await messaging().getToken();
+        console.log('phone token', token);
+        dispatch(userSlice.actions.setPhoneToken(token));
+        // 서버에 전송합니다.
+        return instance.post('/phonetoken', {token});
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    getToken();
+  }, [dispatch]);
 
   return (
     <NavigationContainer>
