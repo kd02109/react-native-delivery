@@ -7,7 +7,6 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnable
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 import org.devio.rn.splashscreen.SplashScreen
 
-
 class MainActivity : ReactActivity() {
 
   /**
@@ -29,3 +28,4 @@ class MainActivity : ReactActivity() {
     super.onCreate(null)
   }
 }
+
