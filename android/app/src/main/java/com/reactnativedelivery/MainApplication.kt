@@ -1,5 +1,6 @@
 package com.reactnativedelivery
 
+import com.reactnativedelivery.R
 import android.app.Application
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
@@ -10,6 +11,8 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
+import com.lugg.RNCConfig.RNCConfigPackage
+import com.microsoft.codepush.react.CodePush
 
 class MainApplication : Application(), ReactApplication {
 
@@ -19,6 +22,8 @@ class MainApplication : Application(), ReactApplication {
             PackageList(this).packages.apply {
               // Packages that cannot be autolinked yet can be added manually here, for example:
               // add(MyReactNativePackage())
+              RNCConfigPackage()
+              add(TMapPackage())
             }
 
         override fun getJSMainModuleName(): String = "index"
@@ -31,6 +36,10 @@ class MainApplication : Application(), ReactApplication {
 
   override val reactHost: ReactHost
     get() = getDefaultReactHost(applicationContext, reactNativeHost)
+
+    protected fun getJSBundleFile(): String {
+        return CodePush.getJSBundleFile()
+    }
 
   override fun onCreate() {
     super.onCreate()
